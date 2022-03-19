@@ -1,0 +1,16 @@
+
+
+<body>
+<h1>Ma liste de truc à faire</h1>
+<p *ngIf="isUpdating">Loading! please wait :)</p>
+<todo-item *ngFor="let todo of todos"
+           [tache]="todo"
+           (eventNotification)="notifyTodoUpdated($event)">
+
+</todo-item>
+<div>
+<i style="position: absolute" class="material-icons">add</i>
+  <input style="position:relative; left:3%"  placeholder="Add task:"
+         type="text" [(ngModel)]="inputValue" (keyup.enter)="addTodoItem()" maxlength="30">
+</div>
+</body>

@@ -1,0 +1,23 @@
+
+
+h1{
+  color:black;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.card_done{
+  @extend .green, .accent-3;
+
+}
+.card_todo
+{
+  @extend .green, .accent-3;
+
+}
+input {
+  vertical-align: baseline;
+}
+ul {
+  text-indent: 2%;
+}

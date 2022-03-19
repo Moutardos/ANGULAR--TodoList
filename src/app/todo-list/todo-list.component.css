@@ -1,0 +1,27 @@
+
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  background-color: #FFC8B3;
+
+}
+h1{
+  color: black;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.done{
+  list-style: square;
+  text-decoration: line-through;
+}
+
+ul {
+  text-indent: 2%;
+}
+
+::placeholder {
+  color: #ff5722;
+  font-size: 1.5em;
+}
