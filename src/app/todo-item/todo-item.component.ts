@@ -10,16 +10,21 @@ export class TodoItemComponent implements OnInit {
   @Input()
   tache!: Todo ;
   @Output()
-  eventNotification = new EventEmitter<Todo>()
+  eventNotification = new EventEmitter<Todo>();
+  @Output()
+  eventNotificationDelete = new EventEmitter<Todo>();
 
   description: string = "";
   edit:boolean = false;
   constructor() {
   }
 
-  public taskUpdate(){
+  public taskUpdate(supprime:boolean){
     this.edit = false;
-    this.eventNotification.emit(this.tache);
+    if (supprime)
+      this.eventNotificationDelete.emit(this.tache);
+    else
+      this.eventNotification.emit(this.tache);
   }
   ngOnInit(): void {
   }

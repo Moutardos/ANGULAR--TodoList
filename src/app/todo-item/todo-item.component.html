@@ -6,14 +6,15 @@
         'green accent-2': tache.done}">
       <div class="card-content white-text">
         <span *ngIf="!edit" class="card-title  deep-orange-text text-lighten-1"> {{tache.label}} {{tache.creationDate | datePipe:true}}   <i (click)="edit = !edit"  class="material-icons">edit</i>
-</span>
+            <i (click)="taskUpdate(true)"  class="material-icons">delete_forever</i>
+        </span>
         <p *ngIf="!edit">{{description}}</p>
         <input *ngIf="edit"
                [(ngModel)]="tache.label"
-               (keyup.enter)="taskUpdate()">
+               (keyup.enter)="taskUpdate(false)">
         <input *ngIf="edit"
                [(ngModel)]="description"
-               (keyup.enter)="taskUpdate()">
+               (keyup.enter)="taskUpdate(false)">
       </div>
       <div class="card-action white-text" (click)="tache.done = !tache.done">
         <p *ngIf="tache.done"> Undone</p> <p *ngIf="!tache.done"> Done</p>
