@@ -1,0 +1,10 @@
+<form #formLogin="ngForm">
+  <i style="position: relative" class="material-icons">account_circle</i>
+  <label>Username :</label> <input type="text" style="position:relative; width: 20%; left:3%; background-color: azure"
+                                   [ngClass]="{'background-color: red': addValue.dirty && addValue.invalid && addValue.value!='', 'background-color: green':addValue.valid}" placeholder="Add task:" type="text"
+                                   name="loginName" [(ngModel)]="loginName" #addValue="ngModel"
+                                   required maxlength="20" minlength="3" pattern="[a-zA-Z0-9]*" > <br><br>
+
+  <button (click)="submit(loginName)"> Login</button>
+
+</form>

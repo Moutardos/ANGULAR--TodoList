@@ -1,0 +1,11 @@
+<div>
+  <form #formAdd="ngForm">
+  <i style="position: absolute" class="material-icons">add</i>
+
+    <input style="position:relative; left:3%; background-color: azure"
+           [ngClass]="{'background-color: red': addValue.dirty && addValue.invalid && addValue.value!='', 'background-color: green':addValue.valid}" placeholder="Add task:" type="text"
+         name="inputValue" [(ngModel)]="inputValue" #addValue="ngModel"
+         (keyup.enter)="formAdd.valid ? emitNewTask() : null"
+         required maxlength="20" minlength="4" pattern="[a-zA-Z0-9 ]*">
+  </form>
+</div>
